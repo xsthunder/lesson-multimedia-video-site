@@ -6,6 +6,7 @@ import Axios from 'axios';
 interface Props{ 
     column:Column
     columnName :string
+    handleVideoSelect:(selectedVideo:string)=>void
 }
 interface State{
     column:Column
@@ -32,7 +33,8 @@ class Home extends React.Component<Props, State>{
     render(){
         const {
             columnName,
-            column
+            column,
+            handleVideoSelect
         } = this.props
         const {
 
@@ -40,12 +42,12 @@ class Home extends React.Component<Props, State>{
         console.log(column)
         getDescription(columnName, column.videos[0]).then(o=>console.log(o.data))
         return (
-            <div style={{ background: '#fff', padding: 80, minHeight: 280 }}>
+            <div style={{ background: '#fff', padding: 24, minHeight: 280 }}>
                 <Carousel autoplay>
                     {
                         column.videos.map(o=>(
                             <Popover title={o} content={o}>
-                                <div>
+                                <div onClick={()=>handleVideoSelect(o)}>
                                     <img src={getImgUrl(columnName, o)}></img>
                                 </div>
                             </Popover>
