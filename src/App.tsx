@@ -44,7 +44,7 @@ export default class extends React.Component<Props, State>{
                         <Breadcrumb.Item>Home</Breadcrumb.Item>
                         <Breadcrumb.Item>App</Breadcrumb.Item>
                     </Breadcrumb>
-                    <Home column={data[selectedColumn]}/>
+                    <Home columnName={selectedColumn} column={data[selectedColumn]}/>
                 </Content>
                 <Footer style={{ textAlign: 'center' }}>
                     Created by Jianjun Zeng©2018

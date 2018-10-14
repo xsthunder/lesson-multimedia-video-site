@@ -1,7 +1,7 @@
 import videoData from './video';
 interface Column{
-    alias?:string
-    videos:Array<any>
+    alias:string
+    videos:Array<string>
 }
 const anime:Column = {
     alias:"动画片",
