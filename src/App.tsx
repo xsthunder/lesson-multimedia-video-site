@@ -1,31 +1,47 @@
 import React from 'react';
 import { Layout, Menu, Breadcrumb} from 'antd';
-import data from './data';
+import  { Video, Columns, Column } from './data';
 import Home from './home';
 import VideoPlayer from './video-player';
-const dataKeys = Object.keys(data);
 
 const { Header, Content, Footer } = Layout;
 interface State{
-    selectedColumn:string
-    selectedVideo: string
+    selectedColumn:Column
+    selectedVideo:Video | null
+    data:Columns
 }
-interface Props{ }
-export default class extends React.Component<Props, State>{
-    constructor(props: Props) {
-        super(props);
-        this.state = {
-            selectedColumn:dataKeys[0],
-            selectedVideo:''
+interface Props{ 
+    data:Columns
+}
+export default class App extends React.Component<Props, State>{
+    static getDerivedStateFromProps(props:Props, state:State|null){
+        const data = props.data;
+        console.log(data);
+        if(!state){
+            return {
+            selectedColumn:data[0],
+            selectedVideo:null,
+            data,
+            }
+        }
+        return {
+            ...state,
+            data
         }
     }
-    handleNavSelect = (e:{key:string}) =>{
+    constructor(props: Props) {
+        super(props);
+        this.state = App.getDerivedStateFromProps(props, null);
+    }
+    handleNavSelect = (selectedColumnName:string) =>{
+        const data = this.props.data;
+        const selectedColumn = data.filter(o=>o.name===selectedColumnName)[0];
         this.setState({
-            selectedColumn:e.key,
-            selectedVideo:''
+            selectedColumn,
+            selectedVideo:null
         })
     }
-    handleVideoSelect = (selectedVideo:string)=>{
+    handleVideoSelect = (selectedVideo:Video)=>{
         this.setState({
             selectedVideo
         })
@@ -33,7 +49,8 @@ export default class extends React.Component<Props, State>{
     render() {
         const {
             selectedColumn,
-            selectedVideo
+            selectedVideo,
+            data,
         } = this.state;
         return (
             <Layout className="layout">
@@ -41,14 +58,14 @@ export default class extends React.Component<Props, State>{
                     <Menu
                         theme="dark"
                         mode="horizontal"
-                        defaultSelectedKeys={[selectedColumn]}
+                        defaultSelectedKeys={[selectedColumn.name]}
                         style={{ lineHeight: '64px' }}
-                        onSelect={this.handleNavSelect}
+                        onSelect={(e)=>this.handleNavSelect(e.selectedKeys[0])}
                     >
                     {
-                        dataKeys.map(
-                            (o:string)=>(
-                                <Menu.Item key={o}>{data[o].alias}</Menu.Item>
+                        data.map(
+                            (o)=>(
+                                <Menu.Item key={o.name}>{o.alias}</Menu.Item>
                             )
                         )
                     }
@@ -61,9 +78,9 @@ export default class extends React.Component<Props, State>{
                     </Breadcrumb>
                     {
                         selectedVideo?(
-                            <VideoPlayer/>
+                            <VideoPlayer video={selectedVideo}/>
                         ):(
-                            <Home columnName={selectedColumn} column={data[selectedColumn]} handleVideoSelect={this.handleVideoSelect}/>
+                            <Home column={selectedColumn} handleVideoSelect={this.handleVideoSelect}/>
                         )
                     }
                 </Content>

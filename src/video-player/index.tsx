@@ -3,10 +3,11 @@ import ReactEcharts from 'echarts-for-react'
 import { Rate} from 'antd';
 import ReactPlayer from 'react-player';
 import { getOption } from './getOption';
+import { Video } from 'src/data';
 
 export type Rates = [number,number,number,number,number];
 interface Props{
-
+    video:Video
 }
 interface State{
     rates:Rates
@@ -38,13 +39,16 @@ class VideoPlayer extends React.Component<Props, State>{
         })
     }
     render(){
+        const {
+            video
+        } = this.props
         const{
             rate, rates
         } = this.state;
         return (
             <div style={{ background: '#fff', padding: 24, minHeight: 280 }}>
                 <Rate value={rate} onChange={this.onRateChange}></Rate>
-                <ReactPlayer url='http://localhost:8081/1.mp4' controls muted
+                <ReactPlayer url={video.videoUrl} controls muted
                     width="100%"
                     height="100%"
                 ></ReactPlayer>
