@@ -46,6 +46,11 @@ export default class App extends React.Component<Props, State>{
             selectedVideo
         })
     }
+    handleUpper = ()=>{
+        this.setState({
+            selectedVideo:null
+        })
+    }
     render() {
         const {
             selectedColumn,
@@ -73,8 +78,12 @@ export default class App extends React.Component<Props, State>{
                 </Header>
                 <Content style={{ padding: '0 50px' }}>
                     <Breadcrumb style={{ margin: '16px 0' }}>
-                        <Breadcrumb.Item>Home</Breadcrumb.Item>
-                        <Breadcrumb.Item>App</Breadcrumb.Item>
+                        <Breadcrumb.Item>
+                        <a onClick={e=>this.handleUpper()}>{selectedColumn.alias}</a>
+                        </Breadcrumb.Item>
+                        {
+                            selectedVideo&&<Breadcrumb.Item>{selectedVideo.name}</Breadcrumb.Item>
+                        }
                     </Breadcrumb>
                     {
                         selectedVideo?(
