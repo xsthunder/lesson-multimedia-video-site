@@ -10,6 +10,10 @@ interface State{
     column:Column
 }
 
+const category2music = {
+    anime:'鈴湯 - 夏空の光.mp3',
+    korean:'文玄雅 - 크리켓송.mp3'
+}
 class Home extends React.Component<Props, State>{
     constructor(props:Props){
         super(props);
@@ -40,7 +44,8 @@ class Home extends React.Component<Props, State>{
                             </Popover>
                         ))
                     }
-                </Carousel>,
+                </Carousel>
+                <audio controls src={`http://localhost:8081/music/${category2music[column.name as "anime"|"korean"]}`}></audio>
             </div>
         )
     }
