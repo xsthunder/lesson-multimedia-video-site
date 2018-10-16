@@ -1,9 +1,17 @@
 import videoData from './video';
+export interface Comment{
+    rate:number
+    content:string
+    hot:number
+    liked:boolean
+}
+export type Comments = Array<Comment>
 interface Video {
     imgUrl: string,
     videoUrl: string,
     content: string,
     name: string
+    comments:Comments
 }
 interface Column {
     name:string
