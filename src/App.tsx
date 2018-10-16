@@ -87,7 +87,7 @@ export default class App extends React.Component<Props, State>{
                     </Breadcrumb>
                     {
                         selectedVideo?(
-                            <VideoPlayer video={selectedVideo}/>
+                            <VideoPlayer video={selectedVideo} column={selectedColumn} handleVideoSelect={this.handleVideoSelect}/>
                         ):(
                             <Home column={selectedColumn} handleVideoSelect={this.handleVideoSelect}/>
                         )

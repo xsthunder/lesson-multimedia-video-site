@@ -34,10 +34,10 @@ class Home extends React.Component<Props, State>{
         console.log(column)
         return (
             <div style={{ background: '#fff', padding: 24, minHeight: 280 }}>
-                <Carousel autoplay>
+                <Carousel autoplay pauseOnHover>
                     {
                         column.videos.map(o=>(
-                            <Popover title={o.name} content={o.content}>
+                            <Popover  title={o.name} content={o.content}>
                                 <div onClick={()=>handleVideoSelect(o)}>
                                     <img src={o.imgUrl}></img>
                                 </div>
