@@ -4,7 +4,7 @@
 
 ## Setup
 
-需要两个console，保持它们不关闭, 需要软件node >= 10
+需要两个console，保持它们不关闭, require node >= 10
 
 ### console1
 ```
