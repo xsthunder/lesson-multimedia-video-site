@@ -14,13 +14,12 @@ npm start
 
 ### console2
 
-提供静态资源，需要静态资源列表如下
-
+提供静态资源
 ```
 npm run host:video
 ```
 
-### static resources
+### 需要静态资源列表 static resources
 
 ```bash
 video
