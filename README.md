@@ -65,7 +65,7 @@ music
 0 directories, 2 files
 ```
 
-修改加载的资源修改查看[data.tsx](./src/data.tsx)，先加载资源再加载react主页面参考[index.tsc](./src/index.tsc)，降低前端复杂度。
+修改加载的资源修改查看[data.tsx](src/data.tsx)，先加载资源再加载react主页面参考[index.tsc](src/index.tsc)，降低前端复杂度。
 
 打开浏览器一般是localhost:8080
 
