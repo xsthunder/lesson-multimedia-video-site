@@ -1,8 +1,8 @@
 # 视频展示网站
 
 ## Deadline
-第六周检查
-每周三上机，二教106
+
+第六周检查,每周三上机，二教106
 
 ## tech stack
 
@@ -65,7 +65,7 @@ music
 0 directories, 2 files
 ```
 
-修改加载的资源修改查看[data.tsx](src/data.tsx)，先加载资源再加载react主页面参考[index.tsc](src/index.tsc)，降低前端复杂度。
+修改加载的资源修改查看[data.tsx](src/data.tsx)，先加载资源再加载react主页面参考[index.tsx](src/index.tsx)，降低前端复杂度。
 
 打开浏览器一般是localhost:8080
 
@@ -73,3 +73,14 @@ music
 
 https://github.com/xsthunder/lesson-multimedia-video-site
 
+## structure
+
+![](image/2018-10-24-16-04-02.png)
+
+## screenshot
+
+![](image/2018-10-24-16-04-35.png)
+
+![](image/2018-10-24-16-04-46.png)
+
+![](image/2018-10-24-16-04-51.png)
