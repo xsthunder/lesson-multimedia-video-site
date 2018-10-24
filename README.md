@@ -10,7 +10,7 @@
 - axios
 - react
 - typescript
-- 
+- no router
 
 ## build with
 
