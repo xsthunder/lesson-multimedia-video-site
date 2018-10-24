@@ -2,6 +2,18 @@
 第六周检查
 每周三上机，二教106
 
+## tech stack
+
+- antd
+- axios
+- react
+- typescript
+
+## build with
+
+- babel 7
+- webpack 4
+
 ## Setup
 
 需要两个console，保持它们不关闭, require node >= 10
@@ -52,6 +64,7 @@ music
 
 打开浏览器一般是localhost:8080
 
-# Repo
+## Repo
 
 https://github.com/xsthunder/lesson-multimedia-video-site
+
