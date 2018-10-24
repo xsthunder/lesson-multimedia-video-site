@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --open --config ./webpack.dev.js",
     "build": "webpack --config ./webpack.prod.js",
-    "host:vidio": "hs --cors -p 8081"
+    "host:video": "hs --cors -p 8081"
   },
   "keywords": [],
   "author": "",
@@ -34,6 +34,7 @@
     "fs-readdir-recursive": "^1.1.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
+    "http-server": "^0.11.1",
     "style-loader": "^0.23.1",
     "typescript": "^3.1.1",
     "webpack": "^4.20.2",
