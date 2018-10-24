@@ -94,7 +94,7 @@ export default class App extends React.Component<Props, State>{
                     }
                 </Content>
                 <Footer style={{ textAlign: 'center' }}>
-                    Created by Jianjun Zeng©2018
+                    Created by xsthunder©2018
                 </Footer>
             </Layout>)
     }
